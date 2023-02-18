@@ -4,7 +4,7 @@ This course includes:
   1. Numpy
   2. Pandas
   3. Data visulization and statistics
-  4. Machine learning models. 
+  4. Machine learning models.   
     * KNN
     * Navie Bayesian Model
     * Logistic Regression
