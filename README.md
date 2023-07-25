@@ -1,5 +1,5 @@
 # Machine Learning Practice
-网易云课堂杨博士主讲的《玩转Python之实战篇》。
+网易云课堂杨博士主讲的《玩转Python之实战篇》  
 This repo includes all my practicing codes of an online course on EaseNet Class, taught by Phd.Yang.
 
 This course includes:
