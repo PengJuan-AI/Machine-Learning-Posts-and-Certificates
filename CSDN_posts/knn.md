@@ -1,7 +1,7 @@
 # 【机器学习应用】【Python】K近邻（KNN）
 
 ## mglearn
-在开始之前再介绍一个机器学习算法的工具包`mglearn`，是《Introduction to Machine Learning with Python》整本书使用的一个工具包，完整代码参考[github](https://github.com/amueller/introduction_to_ml_with_python)
+在开始之前再介绍一个机器学习算法的工具包`mglearn`，是《Introduction to Machine Learning with Python》整本书使用的一个工具包，有很多可视化的模块帮助我么理解算法，完整代码参考[github](https://github.com/amueller/introduction_to_ml_with_python)
 
 安装mglearn参考[set up](https://github.com/amueller/introduction_to_ml_with_python/tree/master#setup)
 ```python
@@ -75,25 +75,7 @@ plt.legend()
 输出：
 ![knn2](pics/knn2.png)
 
-分析一下结果可以发现，近邻数为5时预测准确度已经达到96.5%左右，之后有一个小幅度的下降。在近邻数为10时准确度有明显的提升，但是训练准确度却有所下降。  
-目前来看呢，近邻数为5较为合适。如果进一步的实验，我们可以：
-1. 交叉检验；
-2. 尝试另外一种距离算法
-3. 增加更多数据
-
-## 所以knn到底怎么分类的呢？
-光看数据的话，我们还不能直观的理解K近邻的分类方式，或者它的依据是什么。那么我们可以将它的决策结果可视化，帮助我们分析，也就是画出它的决策分界线(Decision Boundary)，
-
-```
-
-```
-通过上面几张图我们可以发现，近邻数越多，分界线可能会更平滑。
-
-这看起来是个不错的可视化，但实际上我们只能画出2维或3维，因为更高维度的分界线，已经不是我们人脑可以理解的了...
+分析一下结果可以发现，近邻数为5时预测准确度已经达到96.5%左右，之后有一个小幅度的下降。在近邻数为10时准确度有明显的提升，但是训练准确度却有所下降。目前来看呢，近邻数为5较为合适。
 
 ## 最后
-> 一般来说，K近邻是机器学习中最简单的算法之一，也基本适用于生活中的许多问题。所以当我们想要使用机器学习算法做预测时，不妨从尝试一下K近邻算法。
-
-另外，画出一个漂亮的Decision Boundary能够帮助我们更好的分析算法的结果，更多的参考如下：  
-* [Beautiful Plots: The Decision Boundary](https://www.tvhahn.com/posts/beautiful-plots-decision-boundary/)
-* [Visualizing Graph k-NN Decision Boundaries with Matplotlib ](https://saturncloud.io/blog/visualizing-graph-knn-decision-boundaries-with-matplotlib/)
+> 一般来说，K近邻是机器学习中最简单的算法之一，也基本适用于生活中的许多问题。所以当我们想要使用机器学习算法做预测时，不妨尝试一下K近邻算法。
