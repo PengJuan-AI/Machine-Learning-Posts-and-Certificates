@@ -2,13 +2,12 @@
 
 在二元线性回归中，线性回归的目标是找到一条线，这条线离所有数据点的距离最小，我们可以根据这条线预测一个新数据点的位置。将线性回归扩展到更多维度的数据，目标就变成了找到数据之间的一个超平面(hyperplane).
 
-线性回归的超参数有w和b，也就是斜率(slope)和截距(intercept). 基于不同的w和b的获得方法（或称学习方法），以及模型的复杂度，我们可以将线性模型分为OLS，Ridge和Lasso。
+线性回归的超参数有w和b，也就是斜率(slope)和截距(intercept). 基于不同的w和b的获得方法（或称学习方法），以及模型的复杂度，线性回归模型基本上有OLS，Ridge和Lasso三种。
 
-## Linear Regression （最小二乘法）
- 
-最小二乘法的公式参考[]()
+## Linear Regression （最小二乘法OLS）
+OLS回归时最简单的线性回归模型，它通过最小化均方误差计算出斜率w和截距b。均方误差，又称MSE(mean suqre error)即为预测值和真实值之间的平方差。
 
-我们以波士顿房价(boston)数据为例
+以波士顿房价(boston)数据为例构建一个OLS回归模型：
 ```python
 from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
@@ -30,9 +29,7 @@ Test score with linear regression: 0.78
 
 ## Ridge Regression
 
-Ridge线性回归的公式参考
-
-Ridge使用也是最小二乘法，但是在计算斜率w的时候，加上了一个限制：所有的w要尽可能的接近0，也就是说Ridge Regression希望每个特征对结果的影响都尽可能小。
+Ridge使用也是最小二乘法，但是在计算斜率w的时候，加上了一个限制：所有的w要尽可能的接近0，也就是说Ridge回归希望每个特征对结果的影响都尽可能小。
 
 这样的限制也叫做**正则化(regularization)**，目的是避免模型过拟合。
 
