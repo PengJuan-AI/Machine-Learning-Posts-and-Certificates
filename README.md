@@ -39,6 +39,9 @@ This course include 4 modules:
   - Random Forest
   - Neural Network
 
-## CSDN上的博客 (Blog posts on CSDN)
+## CSDN博客 (Blog posts on CSDN)
 1. [【机器学习应用】【Python】监督学习概念及术语](https://editor.csdn.net/md/?articleId=132159732)
 2. [【机器学习应用】【python】机器学习的好帮手——Sklearn](https://editor.csdn.net/md/?articleId=132159806)
+3. [【机器学习应用】【Pyhton】K近邻算法（KNN）](https://blog.csdn.net/pj71945/article/details/132159858)
+4. [机器学习应用】【Python】模型评估（1）—— 交叉验证Cross Validation](https://blog.csdn.net/pj71945/article/details/132374757)
+5. [【机器学习应用】【Python】模型评估（2）—— 网格搜索 Grid Search](https://blog.csdn.net/pj71945/article/details/132374754)
