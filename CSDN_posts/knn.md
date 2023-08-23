@@ -22,7 +22,7 @@ K近邻算法是一种适用于回归和分类的机器学习算法，它的基�
 2. 曼哈顿距离（Manhattan distance）
 3. 明可夫斯基距离（Minkowski distance）
 
-## 如何使用KNN
+## KNN分类
 以乳腺癌数据集`load_breast_cancer`为示例：
 ```python
 from sklearn.datasets import load_breast_cancer
@@ -77,5 +77,39 @@ plt.legend()
 
 分析一下结果可以发现，近邻数为5时预测准确度已经达到96.5%左右，之后有一个小幅度的下降。在近邻数为10时准确度有明显的提升，但是训练准确度却有所下降。目前来看呢，近邻数为5较为合适。
 
-## 最后
-> 一般来说，K近邻是机器学习中最简单的算法之一，也基本适用于生活中的许多问题。所以当我们想要使用机器学习算法做预测时，不妨尝试一下K近邻算法。
+将不同k值的knn决策分界可视化，不同k值的作用更加直观。k=1的分界线会尽可能的将每一个数据点分类，而k值越大，决策分界线就会越平滑，泛化能力相对更好。
+
+
+
+
+## KNN回归
+
+```python
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.datasets import make_regression
+
+X, y = make_regression(n_samples = 100, n_features=1,
+                        n_informative=1, bias = 150.0,
+                        noise = 30, random_state=0)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
+
+knnreg = KNeighborsRegressor().fit(X_train, y_train)
+
+# Compare with linear regssion
+from sklearn.linear_model import LinearRegression
+
+linreg = LinearRegression().fit(X_train, y_train)
+
+print("KNN regression test set score (R^2): {:.3f}".format(knnreg.score(X_test, y_test)))
+print("Linear regression test set score (R^2): {:.3f}".format(linreg.score(X_test, y_test)))
+```
+```
+KNN regression test set score (R^2): 0.609
+Linear regression test set score (R^2): 0.714
+```
+## 总结
+> 一般来说，K近邻是机器学习中最简单的算法之一，近邻数和距离算法是KNN两个重要的参数。
+
+优点：KNN算法比较容易理解，可解释性强，可以作为解决分类/回归问题的baseline。
+缺点：不适合用于特征维度高的数据集，也不适合于稀疏数据集（有很多特征，大多数值为0）；当数据量和近邻数较大时，运行时间较长。
