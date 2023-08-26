@@ -108,8 +108,13 @@ print("Linear regression test set score (R^2): {:.3f}".format(linreg.score(X_tes
 KNN regression test set score (R^2): 0.609
 Linear regression test set score (R^2): 0.714
 ```
+同样将不同k值的回归线可视化，回归线随着k值的增大越加平滑。
+
+
 ## 总结
 > 一般来说，K近邻是机器学习中最简单的算法之一，近邻数和距离算法是KNN两个重要的参数。
 
 优点：KNN算法比较容易理解，可解释性强，可以作为解决分类/回归问题的baseline。
 缺点：不适合用于特征维度高的数据集，也不适合于稀疏数据集（有很多特征，大多数值为0）；当数据量和近邻数较大时，运行时间较长。
+
+完整代码可参考：
