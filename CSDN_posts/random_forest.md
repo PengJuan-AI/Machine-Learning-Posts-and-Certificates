@@ -1,8 +1,10 @@
 # 【机器学习应用】【Python】随机森林
 
-> **随机森林(Randm Forest)**是解决决策树过拟合问题的方式之一，多个决策树共同决策，从而减小耽搁决策树过拟合的影响。随机森林的构造方式主要有两种：数据集的随机或特征选取的随机。
+> **随机森林(Randm Forest)**是集成学习算法之一，通过多个决策树共同决策，解决单个决策树过拟合的问题，随机森林的随机的主要有两部分：数据集的随机或特征选取的随机。
 
 ## 构造随机森林
+
+### 超参数
 构建随机森林模型，我们需要考虑三个关键的参数：
 * `n_estimator`
 * `max_samples`
@@ -13,6 +15,16 @@
 `max_samples`决定训练一棵决策树需要多少数据集。常采用的方法叫做有放回的抽样(bootstrap sample)，即允重复抽取同一个数据。`bootstrap=True`时，默认用所有数据集训练。
 
 `max_features`决定每个样本选择多少特征。当`max_features`等于特征总数时，就丧失了随机性。通常而言，分类问题的`max_features`可设为$\sqrt{n\_features}$，回归问题的`max_features`可设为$\log2(n\_features)$. 默认为sqrt(n\_features).
+
+### 集成学习
+随机森林将多个决策树的预测结果集成，集成的方法为**Bootstrap Aggregation (Bagging)**，其基本步骤为：
+1. 有放回的抽取`n_sample`大小的数据；
+2. 用样本数据在单个决策树上训练
+3. 重复1和2，最终将所有模型的预测结果取平均。
+
+通过设置合理的`n_sample`和`max_features`，使得每个抽取出的数据集间有所差异，相关性小。由于单个决策树会在一个数据集上过拟合，多个在差异很大的数据集上过拟合的决策树集成在一起预测，反而降低了整体的过拟合程度。
+
+这也是为什么随机森林能过更准确分类的原因之一。
 
 ## 运用随机森林
 
@@ -49,3 +61,4 @@ Forest (n_estimators=100)- Accuracy on test set: 0.965
 
 # 参考资料
  1. [《Introduction to Machine Learning with Python》](https://learning.oreilly.com/library/view/introduction-to-machine/9781449369880/)
+ 2. 代码：https://github.com/PengJuan-AI/Machine-Learning-Practice/blob/main/CSDN_posts/notebooks/DecisionTree%26RandomForest.ipynb
